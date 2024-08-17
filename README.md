@@ -7,24 +7,24 @@ The Classroom Management App is a comprehensive platform built using the MERN st
 
 ## Features
 
-- **Principal Role:**
+- Principal Role:
   - Add, delete, update, and view student and teacher profiles.
   - Create classes and assign them to teachers.
 
-- **Teacher Role:**
+- Teacher Role:
   - View all assigned classes.
   - Add, delete, update, and view student information within assigned classes.
 
-- **Student Role:**
+- Student Role:
   - View the list of other students.
   - View assigned classes created by the principal.
 
 ## Technologies Used
 
-- **Frontend:** React.js
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Deployment:** Vercel
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Deployment: Vercel
 
 ## Live Demo
 
@@ -57,7 +57,7 @@ Make sure you have the following installed on your local machine:
 
    # Install frontend dependencies
    cd frontend
-   npm instal
+   npm install
    ```
 
 3. Set up environment variables:
