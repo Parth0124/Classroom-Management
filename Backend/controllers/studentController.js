@@ -3,7 +3,7 @@ const Classroom = require('../models/Classroom');
 
 exports.getAllStudents = async (req, res) => {
   try {
-    const students = await User.find({ role: 'Student' }, 'email');
+    const students = await User.find({ role: "Student" }).select("-password");
 
     if (!students.length) {
       return res.status(404).json({ msg: 'No students found' });
