@@ -1,5 +1,3 @@
-Sure, here's the code for the README:
-
 ```markdown
 # Classroom Management App
 
