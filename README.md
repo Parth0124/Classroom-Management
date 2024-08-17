@@ -38,10 +38,10 @@ Make sure you have the following installed on your local machine:
 
 - Node.js
 - MongoDB
-
+```
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository
 
    ```bash
    git clone https://github.com/Parth0124/classroom-management.git
