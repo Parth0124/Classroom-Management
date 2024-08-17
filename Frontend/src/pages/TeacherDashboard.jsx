@@ -47,11 +47,11 @@ const TeacherDashboard = () => {
 
     const handleModalOk = async () => {
         try {
-            if (action === 'UpdateStudent') {
+            if (action === 'Update Student') {
                 await updateStudent({ ...form.getFieldsValue(), _id: selectedStudent._id });
-            } else if (action === 'DeleteStudent') {
+            } else if (action === 'Delete Student') {
                 await deleteStudent(selectedStudent._id);
-            } else if (action === 'CreateStudent') {
+            } else if (action === 'Create Student') {
                 await createStudent(form.getFieldsValue());
             }
             fetchStudentsAndClassroom();
@@ -64,7 +64,7 @@ const TeacherDashboard = () => {
 
     const handleDelete = (student) => {
         setSelectedStudent(student);
-        handleModalOpen('DeleteStudent', student);
+        handleModalOpen('Delete Student', student);
     };
 
     return (
@@ -114,6 +114,7 @@ const TeacherDashboard = () => {
           <Table
             dataSource={classroom ? [classroom] : []}
             columns={[
+              { title: "My Classroom ID", dataIndex: "_id" },
               { title: "My Classroom Name", dataIndex: "name" },
               { title: "Start Time", dataIndex: "startTime" },
               { title: "End Time", dataIndex: "endTime" },
@@ -134,7 +135,7 @@ const TeacherDashboard = () => {
                 <>
                   <Form.Item
                     name="name"
-                    label="Name"
+                    label="ame"
                     rules={[{ required: true, message: "Please input name!" }]}
                   >
                     <Input />
