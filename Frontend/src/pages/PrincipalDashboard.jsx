@@ -56,7 +56,7 @@ const PrincipalDashboard = () => {
             } else if (action === 'AssignTeacher') {
                 await assignTeacherToClassroom(form.getFieldsValue());
             } else if (action === 'UpdateStudent') {
-                await updateStudent(selectedStudent._id, form.getFieldsValue());  // Pass student ID and updated data
+                await updateStudent(selectedStudent._id, form.getFieldsValue());  
             }
             fetchData();
             setIsModalVisible(false);
