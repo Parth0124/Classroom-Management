@@ -58,7 +58,7 @@ export const createStudent = async (studentData) => {
 export const getAssignedClassroom = async () => {
     try {
         const response = await axios.get('http://localhost:4000/api/v1/teacher/assigned-classroom', {
-            headers: getAuthHeader(),
+            headers: getAuthHeader()
         });
         return response.data;
     } catch (error) {

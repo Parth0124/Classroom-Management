@@ -114,7 +114,6 @@ const TeacherDashboard = () => {
           <Table
             dataSource={classroom ? [classroom] : []}
             columns={[
-              { title: "My Classroom ID", dataIndex: "_id" },
               { title: "My Classroom Name", dataIndex: "name" },
               { title: "Start Time", dataIndex: "startTime" },
               { title: "End Time", dataIndex: "endTime" },

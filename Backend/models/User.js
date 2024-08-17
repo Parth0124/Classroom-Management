@@ -37,7 +37,7 @@ userSchema.methods.comparePassword = async function (password) {
 };
 
 userSchema.methods.generateAuthToken = function () {
-  return jwt.sign({ userId: this._id, role: this.role }, JWT_SECRET, { expiresIn: '1h' });
+  return jwt.sign({ userId: this._id, role: this.role }, JWT_SECRET, { expiresIn: '24h' });
 };
 
 module.exports = mongoose.model('User', userSchema);

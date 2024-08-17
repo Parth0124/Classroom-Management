@@ -1,22 +1,33 @@
 const Classroom = require('../models/Classroom');
+const Teacher = require('../models/User')
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 
 exports.getAssignedClassroom = async (req, res) => {
-    try {
-        const teacherId = req.userId; 
+  try {
+    const teacherId = req.userId;
 
-        const classroom = await Classroom.findById({ assignedTeacher: teacherId });
+    const teacher = await User.findById(teacherId);
 
-        if (!classroom) {
-            return res.status(404).json({ msg: 'No classroom assigned to this teacher' });
-        }
-
-        res.json(classroom);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+    if (!teacher) {
+      return res.status(404).json({ msg: "Teacher not found" });
     }
+
+    const teacherName = teacher.name;
+
+    const classroom = await Classroom.findOne({ assignedTeacher: teacherName });
+
+    if (!classroom) {
+      return res
+        .status(404)
+        .json({ msg: "No classroom assigned to this teacher" });
+    }
+
+    res.json(classroom);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
 };
 
 exports.getAllStudents = async (req, res) => {

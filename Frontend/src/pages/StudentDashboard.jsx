@@ -33,36 +33,38 @@ const StudentDashboard = () => {
     };
 
     return (
-        <Layout>
-            <AppHeader />
-            <Content style={{ padding: '20px' }}>
-                <h1>Student Dashboard</h1>
+      <Layout>
+        <AppHeader />
+        <Content style={{ padding: "20px" }}>
+          <h1>Student Dashboard</h1>
 
-                <Title level={3}>Students Records:</Title>
-                <Table
-                    dataSource={students}
-                    columns={[
-                        { title: 'Student Name', dataIndex: 'name' },
-                        { title: 'Student Email', dataIndex: 'email' },
-                    ]}
-                    loading={loading}
-                    rowKey="_id"
-                />
-                <Title level={3} style={{ marginTop: '20px' }}>Classroom Records/ Time-Table:</Title>
-                <Table
-                    dataSource={classrooms}
-                    columns={[
-                        { title: 'Classroom Name', dataIndex: 'name' },
-                        { title: 'Start Time', dataIndex: 'startTime' },
-                        { title: 'End Time', dataIndex: 'endTime' },
-                        { title: 'Days', dataIndex: 'days' }
-                    ]}
-                    loading={loading}
-                    rowKey="_id"
-                    style={{ marginTop: '20px' }}
-                />
-            </Content>
-        </Layout>
+          <Title level={3}>Students Records:</Title>
+          <Table
+            dataSource={students}
+            columns={[
+              { title: "Students Name", dataIndex: "name" },
+              { title: "Students Email", dataIndex: "email" },
+            ]}
+            loading={loading}
+            rowKey="_id"
+          />
+          <Title level={3} style={{ marginTop: "20px" }}>
+            Classroom Records/ Time-Table:
+          </Title>
+          <Table
+            dataSource={classrooms}
+            columns={[
+              { title: "Classroom Name", dataIndex: "name" },
+              { title: "Start Time", dataIndex: "startTime" },
+              { title: "End Time", dataIndex: "endTime" },
+              { title: "Days", dataIndex: "days" },
+            ]}
+            loading={loading}
+            rowKey="_id"
+            style={{ marginTop: "20px" }}
+          />
+        </Content>
+      </Layout>
     );
 };
 
