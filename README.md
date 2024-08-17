@@ -54,7 +54,8 @@ Make sure you have the following installed on your local machine:
    # Install backend dependencies
    cd backend
    npm install
-
+    ```
+   ```bash
    # Install frontend dependencies
    cd frontend
    npm install
