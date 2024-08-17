@@ -1,0 +1,15 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.site-layout-content {
+  padding: 24px;
+  min-height: 280px;
+}
