@@ -24,7 +24,7 @@ The Classroom Management App is a comprehensive platform built using the MERN st
 - Frontend: React.js
 - Backend: Node.js, Express.js
 - Database: MongoDB
-- Deployment: Vercel
+- Deployment: Vercel(For frontend), Render(For Backend)
 
 ## Live Demo
 
