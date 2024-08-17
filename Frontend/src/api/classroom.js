@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const createClassroom = async (classroomData) => {
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/principal/create-classroom', classroomData, {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/create-classroom`, classroomData, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         return response.data;
@@ -13,7 +13,7 @@ export const createClassroom = async (classroomData) => {
 
 export const assignTeacherToClassroom = async (assignmentData) => {
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/principal/assign-teacher', assignmentData, {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/assign-teacher`, assignmentData, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         return response.data;
@@ -24,7 +24,7 @@ export const assignTeacherToClassroom = async (assignmentData) => {
 
 export const getClassrooms = async () => {
     try {
-        const response = await axios.get('http://localhost:4000/api/v1/principal/classrooms', {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/classrooms`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         return response.data;
@@ -35,7 +35,7 @@ export const getClassrooms = async () => {
 
 export const getClassroomTimetable = async () => {
     try {
-        const response = await axios.get('http://localhost:4000/api/v1/teacher/timetable', {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/teacher/timetable`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         return response.data;

@@ -7,7 +7,7 @@ const getAuthHeader = () => {
 
 export const getStudentsInClassroom = async () => {
     try {
-        const response = await axios.get('http://localhost:4000/api/v1/teacher/all-students', {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/teacher/all-students`, {
             headers: getAuthHeader(),
         });
         return response.data;
@@ -19,9 +19,13 @@ export const getStudentsInClassroom = async () => {
 
 export const updateStudent = async (studentData) => {
     try {
-        const response = await axios.put('http://localhost:4000/api/v1/teacher/update-student', studentData, {
+        const response = await axios.put(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/teacher/update-student`,
+          studentData,
+          {
             headers: getAuthHeader(),
-        });
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error updating student:', error);
@@ -31,9 +35,12 @@ export const updateStudent = async (studentData) => {
 
 export const deleteStudent = async (studentId) => {
     try {
-        const response = await axios.delete(`http://localhost:4000/api/v1/teacher/delete-student/${studentId}`, {
+        const response = await axios.delete(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/teacher/delete-student/${studentId}`,
+          {
             headers: getAuthHeader(),
-        });
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error deleting student:', error);
@@ -44,7 +51,7 @@ export const deleteStudent = async (studentId) => {
 
 export const createStudent = async (studentData) => {
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/teacher/create-student', studentData, {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/teacher/create-student`, studentData, {
             headers: getAuthHeader(),
         });
         return response.data;
@@ -57,9 +64,12 @@ export const createStudent = async (studentData) => {
 // API to get the assigned classroom
 export const getAssignedClassroom = async () => {
     try {
-        const response = await axios.get('http://localhost:4000/api/v1/teacher/assigned-classroom', {
-            headers: getAuthHeader()
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/teacher/assigned-classroom`,
+          {
+            headers: getAuthHeader(),
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error fetching assigned classroom:', error);

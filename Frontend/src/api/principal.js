@@ -7,9 +7,12 @@ const getAuthHeader = () => {
 
 export const getTeachersStudentsAndClassrooms = async () => {
     try {
-        const response = await axios.get('http://localhost:4000/api/v1/principal/data', {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/data`,
+          {
             headers: getAuthHeader(),
-        });
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error fetching teachers and students:', error);
@@ -19,9 +22,13 @@ export const getTeachersStudentsAndClassrooms = async () => {
 
 export const createTeacher = async (teacherData) => {
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/principal/teacher', teacherData, {
+        const response = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/teacher`,
+          teacherData,
+          {
             headers: getAuthHeader(),
-        });
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error creating teacher:', error);
@@ -31,9 +38,13 @@ export const createTeacher = async (teacherData) => {
 
 export const createStudent = async (studentData) => {
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/principal/student', studentData, {
+        const response = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/student`,
+          studentData,
+          {
             headers: getAuthHeader(),
-        });
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error creating student:', error);
@@ -43,9 +54,13 @@ export const createStudent = async (studentData) => {
 
 export const createClassroom = async (classroomData) => {
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/principal/classroom', classroomData, {
+        const response = await axios.post(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/classroom`,
+          classroomData,
+          {
             headers: getAuthHeader(),
-        });
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error creating classroom:', error);
@@ -56,7 +71,7 @@ export const createClassroom = async (classroomData) => {
 export const assignTeacherToClassroom = async (data) => {
     console.log(data)
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/principal/assign-teacher', data, {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/assign-teacher`, data, {
             headers: getAuthHeader(),
         });
         return response.data;
@@ -70,9 +85,13 @@ export const assignTeacherToClassroom = async (data) => {
 
 export const updateStudent = async (studentId, updatedData) => {
     try {
-        const response = await axios.put(`http://localhost:4000/api/v1/principal/update-student/${studentId}`, updatedData, {
-            headers: getAuthHeader(), 
-        });
+        const response = await axios.put(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/update-student/${studentId}`,
+          updatedData,
+          {
+            headers: getAuthHeader(),
+          }
+        );
         return response.data;
     } catch (error) {
         console.error('Error updating student:', error);
@@ -84,9 +103,12 @@ export const updateStudent = async (studentId, updatedData) => {
 
 export const deleteStudent = async (id) => {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:4000/api/v1/principal/delete-student/${id}`, {
+    await axios.delete(
+      `${process.env.REACT_APP_BACKEND_URL}/api/v1/principal/delete-student/${id}`,
+      {
         headers: {
-            Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
-    });
+      }
+    );
 };
