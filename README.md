@@ -83,6 +83,6 @@ Make sure you have the following installed on your local machine:
 
 5. Open your browser and go to `http://localhost:3000` to view the app.
 
-## Contributing
+## Contributions
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
